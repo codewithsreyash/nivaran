@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Packaging
+.Python
+env/
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.local
+
+# SQLite Database files (do not commit dynamic runtime db)
+*.db
+*.db.backup*
+*.db-shm
+*.db-wal
+test_*.db
+_bench_test.db
+test_oneview.db
+
+# Node & Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+dist-ssr/
+frontend/dist/
+
+# Testing & Coverage
+.pytest_cache/
+.pytest-isolated-*/
+.coverage
+htmlcov/
+
+# Local Uploads / Artifacts
+uploads/
+benchmark_results/uploads/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Vercel build output
+.vercel/
+
+# Local prompt dumps
+/nivaran/full_prompt.txt
+/nivaran/prompt_dump.txt

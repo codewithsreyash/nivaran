@@ -1,0 +1,30 @@
+databases:
+  - name: nivaran-postgres
+    databaseName: nivaran_db
+    user: nivaran_user
+    plan: free
+    ipAllowList: []
+
+services:
+  - type: web
+    name: nivaran-backend
+    runtime: python
+    rootDir: nivaran/backend
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python seed.py && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        fromDatabase:
+          name: nivaran-postgres
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "480"
+      - key: ALLOWED_ORIGINS
+        value: "https://nivaran-01.vercel.app,http://localhost:3000,http://localhost:5173"

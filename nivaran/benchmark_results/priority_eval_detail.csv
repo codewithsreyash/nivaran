@@ -1,0 +1,13 @@
+label,expected,predicted,score,match,rationale
+CRIT_safety_overdue_escalated,critical,critical,97.0,True,Max urgency(30)+impact(20)+deadline(20)+ageing(15)+escalation(10)+transfer(5)=100 → CRITICAL
+CRIT_safety_overdue_no_escalation,critical,critical,85.0,True,urgency(30)+impact(20)+deadline(20)+ageing(15) = 85 → CRITICAL
+HIGH_scholarship_due_3days,high,high,64.0,True,urgency(24)+impact(20)+deadline(15)+ageing(8)=67 → HIGH
+HIGH_regulatory_awaiting,high,high,62.5,True,urgency(22)+impact(20)+deadline(10)+ageing(8)+escalation(3)+transfer(2.5)=65.5 → HIGH
+MEDIUM_academic_2weeks,medium,medium,42.0,True,urgency(18)+impact(14)+deadline(10)+ageing(5)=47 → MEDIUM
+MEDIUM_faculty_no_deadline,medium,medium,43.0,True,urgency(16)+impact(14)+deadline(5 default)+ageing(8)=43 → MEDIUM
+MEDIUM_infra_old_case,medium,medium,34.0,True,urgency(12)+impact(8)+deadline(5)+ageing(15)=40 → MEDIUM
+LOW_admin_fresh_no_deadline_far,low,low,22.0,True,urgency(10)+impact(8)+deadline(2)+ageing(2)=22 → LOW
+LOW_other_brand_new,low,low,20.0,True,urgency(8)+impact(8)+deadline(5)+ageing(2)=23 → LOW
+MEDIUM_approval_1week,medium,medium,37.0,True,urgency(14)+impact(8)+deadline(10)+ageing(8)=40 → MEDIUM
+HIGH_safety_24h_deadline,high,high,70.0,True,urgency(30)+impact(20)+deadline(18)+ageing(2)=70 → HIGH
+CRIT_transferred_3x_escalated,critical,critical,92.0,True,All maxed: urgency(22)+impact(20)+deadline(20)+ageing(15)+escalation(10)+transfer(5)=92 → CRITICAL

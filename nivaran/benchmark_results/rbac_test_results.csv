@@ -1,0 +1,30 @@
+test_id,description,expected_status,actual_status,pass
+AUTH-01,Login with correct admin creds → 200,200,200,True
+AUTH-02,Login with wrong password → 401,401,401,True
+AUTH-03,Login with unknown user → 401,401,401,True
+AUTH-04,GET /api/auth/me unauthenticated → 401,401,401,True
+AUTH-05,GET /api/auth/me with admin token → 200,200,200,True
+UNAUTH-01,GET /api/complaints without token → 401,401,401,True
+UNAUTH-02,GET /api/dashboard without token → 401,401,401,True
+UNAUTH-03,GET /api/users without token → 401,401,401,True
+UNAUTH-04,GET /api/audit-logs without token → 401,401,401,True
+RBAC-ADMIN-01,Admin GET /api/complaints → 200,200,200,True
+RBAC-ADMIN-02,Admin GET /api/users → 200,200,200,True
+RBAC-ADMIN-03,Admin GET /api/audit-logs → 200,200,200,True
+RBAC-ADMIN-04,Admin GET /api/dashboard → 200,200,200,True
+RBAC-ADMIN-05,Admin GET /api/reports/complaints → 200,200,200,True
+RBAC-OFFICER-01,Officer GET /api/complaints → 200,200,200,True
+RBAC-OFFICER-02,Officer GET /api/users → 403,403,403,True
+RBAC-OFFICER-03,Officer GET /api/audit-logs → 403,403,403,True
+RBAC-OFFICER-04,Officer GET /api/dashboard → 200,200,200,True
+RBAC-REVIEWER-01,Reviewer GET /api/complaints → 200,200,200,True
+RBAC-REVIEWER-02,Reviewer GET /api/dashboard → 200,200,200,True
+RBAC-READONLY-01,ReadOnly GET /api/complaints → 200,200,200,True
+RBAC-READONLY-02,ReadOnly GET /api/users → 403,403,403,True
+RBAC-READONLY-03,ReadOnly GET /api/audit-logs → 403,403,403,True
+XBUREAU-01,Bureau-1 officer cannot access Bureau-2 complaint (ID=2) → 403,403,403,True
+XBUREAU-02,Bureau-1 officer can access Bureau-1 complaint (ID=1) → 200,200,200,True
+XBUREAU-03,Admin can access Bureau-2 complaint (ID=2) → 200,200,200,True
+TOKEN-01,Malformed token → 401,401,401,True
+TOKEN-02,Empty bearer → 401,401,401,True
+PERSIST-01,Seeded complaint readable after setup → data persists,200,200,True

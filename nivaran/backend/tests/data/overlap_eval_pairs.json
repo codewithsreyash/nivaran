@@ -1,0 +1,1320 @@
+{
+  "_metadata": {
+    "description": "Synthetic evaluation dataset for AICTE OneView overlap/duplicate detection engine.",
+    "notice": "These are SYNTHETIC DEMONSTRATION EXAMPLES created for evaluation purposes only. They are NOT official AICTE complaint records and do not represent real cases or real individuals.",
+    "version": "1.0",
+    "created": "2026-10-28",
+    "label_schema": {
+      "duplicate": "Complaints that describe the same incident and should be merged",
+      "related_independent": "Complaints that share context (institution/category) but describe distinct incidents",
+      "unrelated": "Complaints that are clearly about different subjects or institutions"
+    },
+    "label_note": "Labels are kept separate from input features. Do not use labels as prediction features.",
+    "threshold_evaluated": 25.0,
+    "algorithm_version": "rules-v1"
+  },
+  "pairs": [
+    {
+      "pair_id": "P001",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Scholarship not disbursed for SC/ST students",
+        "description": "Apex Engineering College has not disbursed scholarship amounts for SC/ST category students despite approval from government. Affected students: approximately 120.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-15"
+      },
+      "c2": {
+        "title": "Scholarship non-disbursement at Apex Engineering",
+        "description": "Apex Engineering College failed to release scholarship funds to SC/ST students. Government approved but college not releasing money. Around 120 students affected.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-18"
+      }
+    },
+    {
+      "pair_id": "P002",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Unauthorized fee collection beyond AICTE limits",
+        "description": "The institution is collecting capitation fees and other charges not approved by AICTE. Students are forced to pay or face academic consequences.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Illegal fee demand from students at Sunrise Technical",
+        "description": "Sunrise Technical Institute demands payments beyond the fee structure sanctioned by AICTE. Refusal leads to threats of detention. Many students are struggling financially.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-03"
+      }
+    },
+    {
+      "pair_id": "P003",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Faculty absent for months without substitute",
+        "description": "The mathematics department at Greenfield College of Engineering has no full-time faculty since June. Students have missed entire semester curriculum.",
+        "category": "faculty_related",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-06-10"
+      },
+      "c2": {
+        "title": "No mathematics teachers available at Greenfield Engineering",
+        "description": "Mathematics classes have not been held at Greenfield College of Engineering since June due to lack of faculty. No substitute arranged. Semester exams approaching.",
+        "category": "faculty_related",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-06-12"
+      }
+    },
+    {
+      "pair_id": "P004",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Exam result manipulation allegation",
+        "description": "Students allege that answer sheets have been evaluated unfairly. Several students who performed well received failing grades. Requests for re-evaluation were rejected without explanation.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-05"
+      },
+      "c2": {
+        "title": "Unfair grading in semester examination at National Polytechnic",
+        "description": "National Polytechnic College manipulated exam results. Students with passing performance given fail grades. Re-evaluation requests denied by college administration.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-06"
+      }
+    },
+    {
+      "pair_id": "P005",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Sexual harassment complaint against faculty member",
+        "description": "A female student has reported sexual harassment by Prof. XYZ in the electrical engineering department. The student has documentary evidence and requested immediate action.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-09-20"
+      },
+      "c2": {
+        "title": "Sexual harassment by electrical dept professor at Metro Institute",
+        "description": "Student at Metro Institute of Technology reported harassment by faculty in electrical department. Written complaint filed with principal. Evidence submitted. No action taken.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-09-20"
+      }
+    },
+    {
+      "pair_id": "P006",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Scholarship not disbursed for OBC students",
+        "description": "OBC category students at Apex Engineering College have not received scholarship money for two semesters. Different category from earlier complaints.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-10"
+      },
+      "c2": {
+        "title": "Lab facilities inadequate at Apex Engineering College",
+        "description": "Computer science labs at Apex Engineering College are severely outdated. Students cannot complete experiments. Equipment not maintained for 3 years.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-20"
+      }
+    },
+    {
+      "pair_id": "P007",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Faculty shortage in CSE department",
+        "description": "Greenfield College lacks qualified faculty for core computer science subjects. Final year students are severely impacted.",
+        "category": "faculty_related",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-15"
+      },
+      "c2": {
+        "title": "Hostel fee irregularity at Greenfield Engineering",
+        "description": "Hostel fees at Greenfield College of Engineering have been increased without AICTE approval. Students who refused to pay were threatened with eviction.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P008",
+      "label": "related_independent",
+      "group": "same_category_different_institution",
+      "c1": {
+        "title": "Examination irregularities at National Polytechnic",
+        "description": "Examination papers were reportedly leaked at National Polytechnic College before the scheduled examination date.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-07-20"
+      },
+      "c2": {
+        "title": "Paper leak at Central Technical University",
+        "description": "Examination papers for end-semester exams were leaked at Central Technical University. Multiple students involved.",
+        "category": "academic_examination",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-21"
+      }
+    },
+    {
+      "pair_id": "P009",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Infrastructure complaint: no drinking water",
+        "description": "Sunrise Technical Institute has no functional drinking water supply in the main building. Students and faculty are forced to buy water.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-10"
+      },
+      "c2": {
+        "title": "Scholarship fraud at Metro Institute of Technology",
+        "description": "Metro Institute of Technology has been collecting scholarship documents from students but not submitting them to the government portal.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-06-01"
+      }
+    },
+    {
+      "pair_id": "P010",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Ragging incident at Metro Institute",
+        "description": "Senior students at Metro Institute of Technology ragged first-year students during orientation week. Physical harm reported.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-07-10"
+      },
+      "c2": {
+        "title": "Affiliation renewal delay at Central Technical University",
+        "description": "Central Technical University's affiliation renewal application has been pending for over a year. Academic programs are at risk.",
+        "category": "approval_related",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-05-15"
+      }
+    },
+    {
+      "pair_id": "P011",
+      "label": "duplicate",
+      "group": "missing_institution_id",
+      "c1": {
+        "title": "Hostel warden misconduct at engineering college",
+        "description": "The hostel warden at the engineering college has been physically assaulting students. Multiple complaints to principal went unheard.",
+        "category": "student_safety_welfare",
+        "institution_id": null,
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-25"
+      },
+      "c2": {
+        "title": "Physical assault by hostel warden at Apex Engineering",
+        "description": "Students at Apex Engineering College have been physically abused by the hostel warden. Complaints to administration were dismissed.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-26"
+      }
+    },
+    {
+      "pair_id": "P012",
+      "label": "related_independent",
+      "group": "missing_institution_id",
+      "c1": {
+        "title": "Fee structure not displayed publicly",
+        "description": "The fee structure at the engineering college is not displayed on notice boards as required by AICTE regulations.",
+        "category": "regulatory_compliance",
+        "institution_id": null,
+        "institution_name": null,
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Late salary payments to teaching staff",
+        "description": "Teaching staff at Greenfield College of Engineering have not received salaries for three months.",
+        "category": "faculty_related",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P013",
+      "label": "unrelated",
+      "group": "different_category_different_date",
+      "c1": {
+        "title": "Building construction violates safety norms",
+        "description": "New academic block construction at National Polytechnic College uses substandard materials. Building safety inspector denied entry.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-03-01"
+      },
+      "c2": {
+        "title": "Faculty not registered with teaching credential body",
+        "description": "Several faculty members at Sunrise Technical Institute hold degrees from unrecognized universities and are not registered with any teaching credential body.",
+        "category": "faculty_related",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-15"
+      }
+    },
+    {
+      "pair_id": "P014",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "NAAC accreditation falsified by college",
+        "description": "Greenfield College of Engineering submitted fabricated documents during NAAC accreditation process. Whistleblower revealed falsified lab records and faculty lists.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-05"
+      },
+      "c2": {
+        "title": "Fake documents submitted in NAAC process at Greenfield",
+        "description": "Investigation reveals Greenfield College of Engineering submitted false laboratory records and inaccurate staff lists during the NAAC assessment. Whistleblower evidence available.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-07"
+      }
+    },
+    {
+      "pair_id": "P015",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "NAAC document forgery at Greenfield",
+        "description": "College submitted fake documents during NAAC accreditation.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-05"
+      },
+      "c2": {
+        "title": "Electrical wiring hazard at Greenfield campus",
+        "description": "Exposed and faulty electrical wiring in laboratories poses fire risk. Incident has already caused minor injury to a student.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-10"
+      }
+    },
+    {
+      "pair_id": "P016",
+      "label": "unrelated",
+      "group": "similar_description_different_institution",
+      "c1": {
+        "title": "Students not receiving scholarship payments",
+        "description": "SC/ST students have not received government scholarship payments at Apex Engineering College for the academic year 2025-26.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-01"
+      },
+      "c2": {
+        "title": "SC/ST scholarship delay at Metro Institute",
+        "description": "SC/ST category students at Metro Institute of Technology have also not received scholarship payments. Different college, different administration.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-07-10"
+      }
+    },
+    {
+      "pair_id": "P017",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Laboratory equipment non-functional at Sunrise Technical",
+        "description": "Physics laboratory equipment at Sunrise Technical Institute has been non-functional for two semesters. Practicals are being conducted without proper equipment.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-06-01"
+      },
+      "c2": {
+        "title": "Broken lab equipment blocking practicals at Sunrise Technical Institute",
+        "description": "Physics lab instruments at Sunrise Technical Institute are not working for the past two semesters. Practical sessions are held without functional equipment violating AICTE norms.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-06-05"
+      }
+    },
+    {
+      "pair_id": "P018",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Canteen serving unhygienic food",
+        "description": "Food served in the college canteen at Central Technical University is stale and unhygienic. Multiple food poisoning incidents reported.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-28"
+      },
+      "c2": {
+        "title": "Approval for new department not obtained",
+        "description": "National Polytechnic College started a new engineering program without obtaining AICTE approval. Students have been enrolled illegally.",
+        "category": "approval_related",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-07-01"
+      }
+    },
+    {
+      "pair_id": "P019",
+      "label": "related_independent",
+      "group": "same_category_different_institution",
+      "c1": {
+        "title": "Faculty-to-student ratio violation at Apex Engineering",
+        "description": "Apex Engineering College has exceeded the student intake without proportional increase in faculty, violating AICTE norms.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-05"
+      },
+      "c2": {
+        "title": "Intake exceeded without AICTE approval at Central Technical",
+        "description": "Central Technical University admitted 30% more students than AICTE-approved intake this academic year.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-09-08"
+      }
+    },
+    {
+      "pair_id": "P020",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Internet connectivity absent in hostel",
+        "description": "Metro Institute of Technology hostels have had no internet connectivity for three months. Students cannot access online learning resources.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-07-15"
+      },
+      "c2": {
+        "title": "No internet in Metro Institute hostel for months",
+        "description": "Hostel residents at Metro Institute of Technology have been without internet access since July. Online classes and assignments are impossible to complete.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-07-18"
+      }
+    },
+    {
+      "pair_id": "P021",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Faculty harassment of female students",
+        "description": "Female students at Sunrise Technical Institute have complained about inappropriate behavior by a faculty member in mechanical engineering.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Non-payment of stipend to apprentices",
+        "description": "Apprentices attached to Central Technical University were not paid their stipend for four months, violating labour laws.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P022",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Missing faculty qualifications at National Polytechnic",
+        "description": "Faculty members at National Polytechnic College do not hold required minimum qualifications as prescribed by AICTE.",
+        "category": "faculty_related",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-05-01"
+      },
+      "c2": {
+        "title": "Exam paper leak at National Polytechnic",
+        "description": "Examination papers were leaked to students before exams at National Polytechnic College. Whistleblower has provided evidence.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P023",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Approval for additional seats not obtained",
+        "description": "Apex Engineering College admitted students to additional seats not sanctioned by AICTE in 2025-26 admissions.",
+        "category": "approval_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Unapproved extra admissions at Apex Engineering College",
+        "description": "Apex Engineering College took in more students than AICTE approved for the year 2025-26. Additional seats were filled without prior sanction.",
+        "category": "approval_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-03"
+      }
+    },
+    {
+      "pair_id": "P024",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Stipend for teaching assistants not paid",
+        "description": "Teaching assistants at Greenfield College of Engineering have not received any stipend in three months.",
+        "category": "administrative",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Ragging during college fresher events",
+        "description": "Fresher students at Sunrise Technical Institute faced physical and verbal ragging during orientation events in July.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-07-20"
+      }
+    },
+    {
+      "pair_id": "P025",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Hostel warden assaulting students at Metro Institute",
+        "description": "Metro Institute hostel warden has physically harassed students on multiple occasions.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-25"
+      },
+      "c2": {
+        "title": "No safe drinking water in Metro Institute hostels",
+        "description": "Drinking water supply to Metro Institute of Technology hostels has been contaminated. Water purifiers are broken and no replacement arranged.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-09-10"
+      }
+    },
+    {
+      "pair_id": "P026",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Administrative delay in issuing transcripts",
+        "description": "Sunrise Technical Institute has delayed issuing official transcripts for final year students for over six months, preventing higher education admissions.",
+        "category": "administrative",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-06-15"
+      },
+      "c2": {
+        "title": "Transcript not issued to alumni at Sunrise Technical",
+        "description": "Final year graduates from Sunrise Technical Institute have been waiting 6 months for official transcripts. Admission opportunities for post-graduation are being missed.",
+        "category": "administrative",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-06-18"
+      }
+    },
+    {
+      "pair_id": "P027",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Approval pending for new campus building",
+        "description": "Central Technical University has been constructing a new academic block without AICTE campus expansion approval.",
+        "category": "approval_related",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-04-01"
+      },
+      "c2": {
+        "title": "Faculty bullying students in mechanical department",
+        "description": "Faculty in the mechanical engineering department of National Polytechnic College are verbally abusing and bullying students who ask questions.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-12"
+      }
+    },
+    {
+      "pair_id": "P028",
+      "label": "related_independent",
+      "group": "same_category_different_institution",
+      "c1": {
+        "title": "Canteen food safety violation at Apex Engineering",
+        "description": "Stale food served in Apex Engineering College canteen resulted in a food poisoning outbreak affecting 30 students.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-05"
+      },
+      "c2": {
+        "title": "Food poisoning at Greenfield Engineering hostel mess",
+        "description": "20 students at Greenfield College of Engineering were hospitalized due to food poisoning from the hostel mess.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-08"
+      }
+    },
+    {
+      "pair_id": "P029",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Non-payment of faculty salaries at Central Technical",
+        "description": "Permanent faculty at Central Technical University have not received salaries for two months. The management cites financial difficulties.",
+        "category": "faculty_related",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Salary arrears for teachers at Central Technical University",
+        "description": "Central Technical University has two months of unpaid salary arrears for full-time faculty. Management is non-responsive. Staff threatened with termination for raising the issue.",
+        "category": "faculty_related",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-05"
+      }
+    },
+    {
+      "pair_id": "P030",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Unauthorized collection of caution deposit",
+        "description": "Metro Institute of Technology is collecting a caution deposit not part of the approved fee structure. Students cannot retrieve it upon graduation.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-10"
+      },
+      "c2": {
+        "title": "Technical faculty lack industry experience",
+        "description": "Faculty hired for technical subjects at Central Technical University have no prior industry experience. Students are not getting industry-relevant education.",
+        "category": "faculty_related",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-01"
+      }
+    },
+    {
+      "pair_id": "P031",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "AICTE inspection team denied entry",
+        "description": "When AICTE inspection team arrived at Sunrise Technical Institute, college administration denied entry citing internal functions. No valid reason provided.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-15"
+      },
+      "c2": {
+        "title": "Sunrise Technical refused AICTE inspection access",
+        "description": "College management at Sunrise Technical Institute blocked AICTE inspection team from entering the premises. Inspection report could not be completed.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-16"
+      }
+    },
+    {
+      "pair_id": "P032",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Students denied library access before exams",
+        "description": "Greenfield College of Engineering locked the library one week before final exams citing renovation. No alternative reading space provided.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-20"
+      },
+      "c2": {
+        "title": "Scholarship portal documents not submitted by college",
+        "description": "Apex Engineering College collected scholarship application documents but failed to upload them on the government scholarship portal within the deadline.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-15"
+      }
+    },
+    {
+      "pair_id": "P033",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "AICTE inspection refused at Sunrise Technical",
+        "description": "Management blocked AICTE inspection team.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-15"
+      },
+      "c2": {
+        "title": "Unauthorized fee collection at Sunrise Technical",
+        "description": "Sunrise Technical Institute charging fees beyond AICTE approved limits.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P034",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Hostel construction lacks fire safety measures",
+        "description": "Newly constructed hostel at National Polytechnic College has no fire extinguishers, emergency exits, or fire alarms installed. Safety audit was skipped.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-10"
+      },
+      "c2": {
+        "title": "Fire safety equipment missing in National Polytechnic hostel",
+        "description": "The new hostel building at National Polytechnic College has no fire safety infrastructure. No extinguishers, no exits marked, alarms not installed. Students at risk.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-12"
+      }
+    },
+    {
+      "pair_id": "P035",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Degree certificate not issued to graduates",
+        "description": "Central Technical University graduates from 2024 batch have not received their degree certificates two years after passing.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Overcrowded classrooms beyond approved capacity",
+        "description": "Classrooms at Greenfield College of Engineering are overcrowded with 90-100 students in rooms approved for 60.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P036",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Degree certificates delayed at Central Technical University",
+        "description": "2024 batch graduates from Central Technical University have not been given degree certificates. Applications rejected without explanation.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Central Technical graduates waiting 2 years for degree",
+        "description": "Students who graduated in 2024 from Central Technical University are still waiting for official degree certificates. Two years have passed without resolution.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-05"
+      }
+    },
+    {
+      "pair_id": "P037",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Degree certificate delay at Central Technical",
+        "description": "Graduates from 2024 have not received certificates.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Overcrowded classrooms at Central Technical University",
+        "description": "Classrooms accommodate 100+ students in rooms approved for 60, violating AICTE norms.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P038",
+      "label": "unrelated",
+      "group": "similar_description_different_institution",
+      "c1": {
+        "title": "Library books outdated and insufficient at Apex",
+        "description": "Apex Engineering College library has books that are 20+ years old and does not have adequate number of copies for the enrolled students.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-10"
+      },
+      "c2": {
+        "title": "Library resources inadequate at Sunrise Technical",
+        "description": "Library at Sunrise Technical Institute lacks sufficient reference books and digital resources for engineering students.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-12"
+      }
+    },
+    {
+      "pair_id": "P039",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Student beaten by senior outside campus",
+        "description": "First-year student at Metro Institute of Technology was beaten by senior students off campus after refusing to comply with ragging demands.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-20"
+      },
+      "c2": {
+        "title": "Ragging physical assault outside Metro Institute campus",
+        "description": "A junior student was physically assaulted by seniors off-campus. Victim is enrolled at Metro Institute of Technology. Senior students reportedly demanded money.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-20"
+      }
+    },
+    {
+      "pair_id": "P040",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Chemical lab waste improperly disposed",
+        "description": "Greenfield College of Engineering chemistry lab is disposing hazardous chemical waste into nearby drainage violating environmental norms.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Teaching load exceeds AICTE limits for faculty",
+        "description": "Faculty members at National Polytechnic College are being assigned teaching loads far beyond AICTE-prescribed limits without additional compensation.",
+        "category": "faculty_related",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-08-15"
+      }
+    },
+    {
+      "pair_id": "P041",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Research grant funds misused by management",
+        "description": "Research grant funds allocated by AICTE to Central Technical University were diverted to non-research purposes. RTI response confirms misappropriation.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-01"
+      },
+      "c2": {
+        "title": "AICTE research grant misappropriated at Central Technical",
+        "description": "Central Technical University misused AICTE-awarded research grant money. RTI documents show funds were spent on administrative expenses rather than research activities.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-05"
+      }
+    },
+    {
+      "pair_id": "P042",
+      "label": "related_independent",
+      "group": "same_category_different_institution",
+      "c1": {
+        "title": "Falsified faculty qualifications at National Polytechnic",
+        "description": "Faculty members at National Polytechnic College have submitted fake degree certificates to prove eligibility.",
+        "category": "faculty_related",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-06-15"
+      },
+      "c2": {
+        "title": "Guest faculty hired without proper credentials at Apex",
+        "description": "Apex Engineering College has been hiring guest faculty without verifying their educational credentials, violating AICTE norms.",
+        "category": "faculty_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-01"
+      }
+    },
+    {
+      "pair_id": "P043",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Plagiarism in Ph.D. thesis submitted by faculty",
+        "description": "A faculty member at Apex Engineering College submitted a Ph.D. thesis with 60% plagiarism, which was later awarded the degree despite complaints.",
+        "category": "academic_examination",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Irregular admissions to MBA program at Sunrise Technical",
+        "description": "Sunrise Technical Institute conducted MBA admissions without following AICTE prescribed eligibility criteria and counseling process.",
+        "category": "approval_related",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P044",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Students forced to buy books from college shop at inflated prices",
+        "description": "Apex Engineering College forces students to purchase textbooks exclusively from the college-owned bookshop at prices 3x market rate. Alternative purchases are discouraged.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-25"
+      },
+      "c2": {
+        "title": "Mandatory book purchase from campus store at Apex Engineering",
+        "description": "Students at Apex Engineering College are compelled to buy prescribed textbooks only from the institution bookstore at triple the market price. External books not allowed in class.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-26"
+      }
+    },
+    {
+      "pair_id": "P045",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Campus placed under illegal curfew by management",
+        "description": "Management of Metro Institute of Technology imposed curfew restrictions on students within campus without proper authority, restricting movement after 9PM.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-15"
+      },
+      "c2": {
+        "title": "Computer science lab equipment not maintained at Central Technical",
+        "description": "Computer lab equipment at Central Technical University has not been serviced or replaced in 5 years. Students are using outdated systems that frequently crash.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P046",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Ragging at Metro Institute during orientation",
+        "description": "Freshers at Metro Institute of Technology faced verbal and physical ragging during orientation week in July.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-07-10"
+      },
+      "c2": {
+        "title": "Sexual harassment by faculty at Metro Institute",
+        "description": "A student reported sexual harassment by a faculty member in the electrical department at Metro Institute of Technology.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-09-20"
+      }
+    },
+    {
+      "pair_id": "P047",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Annual report of Greenfield Engineering contains false data",
+        "description": "Greenfield College of Engineering submitted annual report to AICTE with false student enrollment figures and fabricated placement statistics.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Falsified statistics in AICTE annual report by Greenfield",
+        "description": "The annual report filed by Greenfield College of Engineering to AICTE contains inflated student figures and fake placement data.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-03"
+      }
+    },
+    {
+      "pair_id": "P048",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Grievance committee not constituted as required",
+        "description": "National Polytechnic College has not formed the mandatory student grievance redressal committee as required by AICTE regulations.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-07-01"
+      },
+      "c2": {
+        "title": "Advance fee demand before admission results",
+        "description": "Sunrise Technical Institute is demanding advance payment of full semester fees before admission results are declared, before students have confirmed admission.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P049",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "False placement data in annual report by Greenfield",
+        "description": "Annual report filed by Greenfield College of Engineering contains fabricated placement statistics.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "NAAC records falsified at Greenfield College",
+        "description": "Greenfield College submitted fabricated documents during NAAC assessment including fake lab records.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-05"
+      }
+    },
+    {
+      "pair_id": "P050",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Water logging in campus building basements",
+        "description": "Basements of main academic building at Central Technical University flood every monsoon. Infrastructure was never addressed despite multiple complaints to management.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-15"
+      },
+      "c2": {
+        "title": "Monsoon flooding in Central Technical University building",
+        "description": "During monsoon, basement of Central Technical University academic block floods. Safety hazard for students using basement labs. Problem recurring for 3 years.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-18"
+      }
+    },
+    {
+      "pair_id": "P051",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Faculty strike disrupting semester at Apex Engineering",
+        "description": "Faculty at Apex Engineering College called an indefinite strike due to non-payment of salaries. Entire semester calendar has been disrupted.",
+        "category": "faculty_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-10"
+      },
+      "c2": {
+        "title": "Admissions made to discontinued course at Metro Institute",
+        "description": "Metro Institute of Technology admitted students to a program whose AICTE approval had already lapsed for the academic year.",
+        "category": "approval_related",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P052",
+      "label": "related_independent",
+      "group": "same_category_different_institution",
+      "c1": {
+        "title": "Student grievance ignored at Apex Engineering",
+        "description": "Student submitted formal written grievance about fee irregularities at Apex Engineering College. Grievance committee met but took no action.",
+        "category": "administrative",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-08-20"
+      },
+      "c2": {
+        "title": "Complaints about harassment ignored at Metro Institute",
+        "description": "Student harassment complaints submitted to Metro Institute administration were ignored. No action taken in two months.",
+        "category": "administrative",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P053",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Online exam platform crashed during final exam",
+        "description": "AICTE-approved online examination platform crashed during finals at National Polytechnic College. Students lost answers entered. Re-exam not scheduled yet.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-20"
+      },
+      "c2": {
+        "title": "Technical failure in online exam system at National Polytechnic",
+        "description": "The online exam portal failed during final semester examinations at National Polytechnic College. Students' work was lost. No alternative arrangement made.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-20"
+      }
+    },
+    {
+      "pair_id": "P054",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Online exam failure at National Polytechnic",
+        "description": "The exam portal crashed during finals causing loss of student data.",
+        "category": "academic_examination",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-09-20"
+      },
+      "c2": {
+        "title": "Research misappropriation at Central Technical University",
+        "description": "AICTE research grant money diverted to non-research purposes by CTU management.",
+        "category": "administrative",
+        "institution_id": "INST-006",
+        "institution_name": "Central Technical University",
+        "incident_date": "2026-07-01"
+      }
+    },
+    {
+      "pair_id": "P055",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Unauthorized fee collection at Metro Institute",
+        "description": "Metro Institute of Technology collecting caution deposit not in approved fee structure.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-10"
+      },
+      "c2": {
+        "title": "Metro Institute admitted students to lapsed course",
+        "description": "Students admitted to program at Metro Institute whose AICTE approval had expired.",
+        "category": "approval_related",
+        "institution_id": "INST-005",
+        "institution_name": "Metro Institute of Technology",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P056",
+      "label": "duplicate",
+      "group": "clear_duplicate",
+      "c1": {
+        "title": "Power cuts in examination halls during board exam",
+        "description": "Apex Engineering College had repeated power cuts in examination halls during board examinations. No generator backup. UPS unavailable. Students reported losing written answers.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-25"
+      },
+      "c2": {
+        "title": "Electricity outage during exams at Apex Engineering College",
+        "description": "Power supply failed multiple times during university examinations at Apex Engineering College. Backup generator was not operational. UPS systems absent. Written papers disrupted.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-25"
+      }
+    },
+    {
+      "pair_id": "P057",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Discriminatory treatment of OBC students at Sunrise",
+        "description": "OBC category students at Sunrise Technical Institute allege discriminatory treatment in internship allocation. Reserved students consistently given lower-ranked positions.",
+        "category": "student_safety_welfare",
+        "institution_id": "INST-002",
+        "institution_name": "Sunrise Technical Institute",
+        "incident_date": "2026-09-05"
+      },
+      "c2": {
+        "title": "Non-standard syllabus followed at Greenfield Engineering",
+        "description": "Greenfield College of Engineering is teaching a modified syllabus not approved by the affiliating university. Exam questions are from approved syllabus causing student confusion.",
+        "category": "academic_examination",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-01"
+      }
+    },
+    {
+      "pair_id": "P058",
+      "label": "related_independent",
+      "group": "same_institution_different_incident",
+      "c1": {
+        "title": "Fake books forced on students at Apex Engineering",
+        "description": "Students compelled to buy textbooks from campus bookstore at inflated prices.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-07-25"
+      },
+      "c2": {
+        "title": "Power cuts during exams at Apex Engineering",
+        "description": "Electricity outages disrupted board examinations at Apex Engineering College.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-25"
+      }
+    },
+    {
+      "pair_id": "P059",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Annual report falsification at Greenfield Engineering",
+        "description": "Greenfield submitted annual report with fake placement statistics to AICTE.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Grievance committee not formed at National Polytechnic",
+        "description": "National Polytechnic College has not constituted the mandatory student grievance committee required by AICTE.",
+        "category": "regulatory_compliance",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-07-01"
+      }
+    },
+    {
+      "pair_id": "P060",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "PhD student stipend withheld by college",
+        "description": "Ph.D. research scholars at Greenfield College of Engineering are not receiving their monthly stipend despite government allocation. Administration claims bank issues.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-01"
+      },
+      "c2": {
+        "title": "Research scholar stipend not paid at Greenfield College",
+        "description": "Monthly stipend for PhD scholars enrolled at Greenfield College of Engineering has not been disbursed. Government funds are available but institution is not transferring.",
+        "category": "scholarship_financial",
+        "institution_id": "INST-003",
+        "institution_name": "Greenfield College of Engineering",
+        "incident_date": "2026-08-05"
+      }
+    },
+    {
+      "pair_id": "P061",
+      "label": "unrelated",
+      "group": "different_institution_different_subject",
+      "c1": {
+        "title": "Sports facility not maintained at National Polytechnic",
+        "description": "Sports ground at National Polytechnic College has not been maintained. Equipment is broken and students are unable to use the facility.",
+        "category": "infrastructure_facilities",
+        "institution_id": "INST-004",
+        "institution_name": "National Polytechnic College",
+        "incident_date": "2026-08-15"
+      },
+      "c2": {
+        "title": "Faculty on payroll but not attending institution",
+        "description": "Apex Engineering College maintains ghost faculty on payroll who do not attend the institution and their names are shown in AICTE returns.",
+        "category": "faculty_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-01"
+      }
+    },
+    {
+      "pair_id": "P062",
+      "label": "duplicate",
+      "group": "paraphrased_duplicate",
+      "c1": {
+        "title": "Ghost faculty names in AICTE returns at Apex Engineering",
+        "description": "Apex Engineering College shows faculty members on payroll in AICTE submissions who are not actually employed at the institution.",
+        "category": "faculty_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-01"
+      },
+      "c2": {
+        "title": "Fictitious faculty listed in AICTE data returns at Apex",
+        "description": "AICTE data submission from Apex Engineering College lists faculty who are not actually present at the institution. Ghost employees being used to inflate numbers.",
+        "category": "faculty_related",
+        "institution_id": "INST-001",
+        "institution_name": "Apex Engineering College",
+        "incident_date": "2026-09-03"
+      }
+    }
+  ]
+}

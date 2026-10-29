@@ -1,0 +1,17 @@
+label,method,url,n,mean_ms,median_ms,p95_ms,p99_ms,min_ms,max_ms,stdev_ms,dominant_status,error_count,error_rate_pct
+Health Check (unauthenticated),GET,/api/health,30,8.09,5.44,19.24,21.18,2.93,21.21,5.52,200,0,0.0
+ML Status (unauthenticated),GET,/api/ml/status,30,7.91,7.25,14.68,18.71,2.8,19.61,4.0,200,0,0.0
+Scheduler Status (unauthenticated),GET,/api/scheduler/status,30,6.91,6.54,13.23,15.59,2.81,16.12,3.07,200,0,0.0
+Dashboard (admin),GET,/api/dashboard,30,26.48,20.83,56.37,62.15,15.32,63.48,12.86,200,0,0.0
+Complaint Listing (admin),GET,/api/complaints,30,13.98,13.83,25.25,36.54,7.81,39.29,6.66,200,0,0.0
+Complaint Detail ID=1 (admin),GET,/api/complaints/1,30,12.01,10.57,21.63,36.43,4.2,41.24,7.22,200,0,0.0
+Complaint Listing (bureau_officer),GET,/api/complaints,30,13.23,11.37,21.08,26.75,7.1,28.53,4.89,200,0,0.0
+Complaint Listing (read_only),GET,/api/complaints,30,13.09,12.25,20.44,26.34,7.71,27.91,4.37,200,0,0.0
+Institution Listing (admin),GET,/api/institutions,30,14.89,10.86,23.32,67.54,6.74,85.58,14.3,200,0,0.0
+Priority Queue (admin),GET,/api/priority-queue,30,17.69,16.01,27.64,43.63,8.56,49.96,8.29,200,0,0.0
+Reports Complaints (admin),GET,/api/reports/complaints,30,13.21,11.24,23.81,26.75,7.84,27.12,5.14,200,0,0.0
+Deadlines (admin),GET,/api/deadlines,30,9.21,7.15,22.22,31.95,4.64,33.84,6.42,200,0,0.0
+Notifications (admin),GET,/api/notifications,30,12.23,11.46,19.47,20.36,6.72,20.67,4.01,200,0,0.0
+User List (admin),GET,/api/users,30,12.14,11.4,19.97,24.49,6.98,25.66,4.54,200,0,0.0
+Audit Logs (admin),GET,/api/audit-logs,30,10.1,9.57,12.9,17.27,8.44,18.93,2.03,200,0,0.0
+Bureaus (admin),GET,/api/bureaus,30,7.37,7.26,8.66,8.7,5.89,8.71,0.77,200,0,0.0
