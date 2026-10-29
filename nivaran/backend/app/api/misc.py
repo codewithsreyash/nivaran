@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import Optional, List
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session, joinedload
-from sqlalchemy import func
+from sqlalchemy import extract, func
 from ..database import get_db
 from ..dependencies import (
     get_bureau_scope, get_current_user, require_admin, require_not_readonly,
@@ -125,10 +125,13 @@ def get_dashboard(
     ).group_by(Complaint.calculated_priority_level).all()
 
     # Monthly trend (last 6 months)
+    month_year = extract("year", Complaint.registration_date)
+    month_number = extract("month", Complaint.registration_date)
     monthly = complaints_query().with_entities(
-        func.strftime("%Y-%m", Complaint.registration_date).label("month"),
+        month_year.label("year"),
+        month_number.label("month"),
         func.count(Complaint.id)
-    ).group_by("month").order_by("month").limit(6).all()
+    ).group_by(month_year, month_number).order_by(month_year, month_number).limit(6).all()
 
     return {
         "total_complaints": total,
@@ -155,8 +158,11 @@ def get_dashboard(
             for p, c in prio_dist
         ],
         "monthly_trend": [
-            {"month": m, "count": c}
-            for m, c in monthly
+            {
+                "month": f"{int(year)}-{int(month):02d}" if year is not None and month is not None else None,
+                "count": count,
+            }
+            for year, month, count in monthly
         ],
         "region_distribution": [],
     }

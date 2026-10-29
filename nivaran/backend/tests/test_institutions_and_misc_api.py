@@ -25,6 +25,13 @@ def test_dashboard_stats(client, admin_token):
     assert "critical_cases" in data
     assert "pending_review" in data or "disposed_complaints" in data
     assert data["total_complaints"] >= 1
+    assert data["monthly_trend"]
+    assert all(
+        isinstance(entry["month"], str)
+        and len(entry["month"]) == 7
+        and entry["month"][4] == "-"
+        for entry in data["monthly_trend"]
+    )
 
 
 def test_bureaus_list(client, admin_token):
